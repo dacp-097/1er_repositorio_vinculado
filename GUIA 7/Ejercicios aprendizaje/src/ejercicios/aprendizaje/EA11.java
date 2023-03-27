@@ -30,20 +30,20 @@ public class EA11 {
         int num2 = leer.nextInt();
 
         int resp;
-        resp=0;
-        
+        resp = 0;
+        String respSN;
+        respSN="";
         do {
 
-        System.out.println("MENU\n" +
-"1. Sumar\n" +
-"2. Restar\n" +
-"3. Multiplicar\n" +
-"4. Dividir\n" +
-"5. Salir\n" +
-"Elija opción:");
-        
-        
-        resp = leer.nextInt();
+            System.out.println("MENU\n"
+                      + "1. Sumar\n"
+                      + "2. Restar\n"
+                      + "3. Multiplicar\n"
+                      + "4. Dividir\n"
+                      + "5. Salir\n"
+                      + "Elija opción:");
+
+            resp = leer.nextInt();
 
             switch (resp) {
 
@@ -64,28 +64,17 @@ public class EA11 {
                     break;
 
                 case 5:
-                    System.out.println("¿Está seguro que desea salir del programa (S/N)?);"
-            
-                    int resp2 = leer.nextInt();
-
-                    if (resp2 == "S" || resp2 == "s") {
-
-                        var = false;
-               
-               
-                    } else if (resp2 == "N" || resp2 == "n") {
-
-                        var = true;
-                    } else {
-                        System.out.println("vuelva a intentar ");
-                    }
+                    System.out.println("¿Está seguro que desea salir del programa (S/N)?");
+                    respSN = leer.next();
+                    break;
+                    
                 default:
                     System.out.println("Opcion no valida, vuelva a intentar ");
-                    
-
             }
 
-        } while(resp !== 5 && var = true );
+            System.out.println("Adios...");
+            
+        } while (!("s".equalsIgnoreCase(respSN)));
 
     }
 

@@ -5,6 +5,8 @@
  */
 package ejercicios.aprendizaje;
 
+import java.util.Scanner;
+
 /**
  *
  * @author DELL
@@ -16,6 +18,30 @@ public class EA13 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese la dimension de la matriz");
+        int num = leer.nextInt();
+
+        for (int i = 0; i < num; i++) {
+
+            for (int j = 0; j < num; j++) {
+
+                if (i == 0 || j == 0 || i == num - 1 || j == num - 1) {
+
+                    System.out.print("* ");
+
+                } else {
+                    System.out.print("  ");
+
+                }
+
+            }
+            System.out.println("");
+
+        }
+
     }
-    
 }
+
+

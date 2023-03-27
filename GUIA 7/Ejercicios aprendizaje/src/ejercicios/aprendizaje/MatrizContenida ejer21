@@ -1,0 +1,73 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkg21.matrizcontenida;
+
+/**
+ *
+ * @author DanielPalma
+ */
+public class MatrizContenida {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int[][] matrizM = new int[10][10];
+        int[][] matrizP = new int[3][3];
+        int n = 1, m = 45;
+        String comp = "";
+        System.out.println("La matriz M de 10x10 es:");
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                matrizM[i][j] = n;
+                n++;
+                System.out.print("[" + matrizM[i][j] + "]");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+        System.out.println("La matriz P de 3x3 es: ");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrizP[i][j] = m;
+                m++;
+                System.out.print("[" + matrizP[i][j] + "]");
+            }
+            m += 7;
+            System.out.println("");
+        }
+        int x = 0, y = 0, count = 0;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                count = 0;
+                if (matrizP[0][0] == matrizM[i][j]) {
+                    x = i;
+                    y = j;
+                    for (int k = 0; k < 3; k++) {
+                        y = j;
+                        for (int l = 0; l < 3; l++) {
+                            if (matrizP[k][l] == matrizM[x][y]) {
+                                count++;
+                                y++;
+                            }
+                        }
+                        x++;
+                    }
+                }
+                if (count == 9) {
+                    System.out.println("La matriz P está contenida en la matriz M");
+                    System.out.println("El primer elemento de P se encuentra en la posición " + "[" + (x - 3) + "," + (y - 3) + "]");
+                    comp = "salir";
+                }
+            }
+        }
+        if (comp != "salir") {
+            System.out.println("La matriz P NO está contenida en la matriz M");
+        }
+
+    }
+
+}
